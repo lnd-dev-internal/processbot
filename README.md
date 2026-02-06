@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 BOT VẬN HÀNH - Chuyên Gia Hỗ Trợ Nội Bộ
 
-## Getting Started
+**Bot Vận Hành** là giải pháp trợ lý ảo thông minh được thiết kế riêng để hỗ trợ đội ngũ nhân viên tại các bưu cục. Dự án kết hợp sức mạnh của mô hình AI Gemini với kho kiến thức nội bộ để cung cấp các hướng dẫn quy trình chính xác, nhanh chóng và thân thiện.
 
-First, run the development server:
+## 🌟 Tính Năng Chính
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Hỗ Trợ Quy Trình 24/7**: Giải đáp mọi thắc mắc về quy trình vận hành, xử lý hàng hóa, chính sách bưu cục.
+- **Đa Nền Tảng**: Hoạt động mượt mà trên cả Web App và Telegram Bot.
+- **Kho Kiến Thức Tùy Biến**: Dễ dàng cập nhật dữ liệu thông qua Google Sheets hoặc giao diện quản lý.
+- **Phản Hồi "Như Người Thật"**: AI được huấn luyện để trả lời với phong cách chuyên nghiệp, đồng cảm và dễ hiểu.
+- **Tìm Kiếm Thông Minh**: Sử dụng công nghệ Vector Embedding để tìm kiếm ngữ cảnh chính xác nhất.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Bắt Đầu
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Yêu Cầu Hệ Thống
+- Node.js 18+
+- Tài khoản Google Cloud (cho Gemini API & Google Sheets)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Cài Đặt
 
-## Learn More
+1. Clone dự án:
+   ```bash
+   git clone <repository-url>
+   cd Botvanhanh
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Cài đặt dependency:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Cấu hình biến môi trường (`.env`):
+   ```env
+   VITE_GEMINI_API_KEYS=key1,key2
+   TELEGRAM_BOT_TOKEN=your_bot_token
+   GOOGLE_CREDS={"type": "service_account", ...}
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Chạy Dự Án
 
-## Deploy on Vercel
+- **Web App (Next.js)**:
+  ```bash
+  npm run dev
+  ```
+- **Telegram Bot**:
+  ```bash
+  npm run telegram
+  ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠 Công Nghệ Sử Dụng
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend**: Next.js 14, React, Tailwind CSS, Framer Motion.
+- **AI Core**: Google Gemini AI (Pro & Flash models).
+- **Database**: Google Sheets (cho kho kiến thức), local/memory storage cho embedding.
+- **Bot Framework**: Node-telegram-bot-api.
+
+---
+*Bot Vận Hành - Đồng hành cùng bạn trong mọi quy trình!*

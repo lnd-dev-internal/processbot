@@ -115,7 +115,7 @@ export default function Home() {
           <nav className="flex-1 mt-4 space-y-1 overflow-y-auto scrollbar-hide">
             <SidebarButton
               icon={<MessageSquare size={18} />}
-              label="Trợ lý Gemini"
+              label="Bot Vận Hành"
               active={activeTab === "chat"}
               onClick={() => setActiveTab("chat")}
             />
@@ -152,7 +152,7 @@ export default function Home() {
           </button>
           <div className="md:hidden font-bold flex items-center gap-2">
             <Bot size={20} className="text-emerald-500" />
-            <span>Process Bot</span>
+            <span>Bot Vận Hành</span>
           </div>
           <div className="w-10" /> {/* Spacer */}
         </header>
@@ -180,8 +180,8 @@ export default function Home() {
                         </div>
                         <div className={`space-y-4 pt-1 ${msg.role === "user" ? "text-right" : ""}`}>
                           <div className={`whitespace-pre-wrap leading-relaxed ${msg.role === "user"
-                              ? "bg-[#303030] px-4 py-2.5 rounded-2xl inline-block"
-                              : "text-[16px]"
+                            ? "bg-[#303030] px-4 py-2.5 rounded-2xl inline-block"
+                            : "text-[16px]"
                             }`}>
                             {msg.text}
                           </div>
@@ -229,7 +229,7 @@ export default function Home() {
                         (e.target as HTMLTextAreaElement).style.height = 'inherit';
                       }
                     }}
-                    placeholder="Gửi tin nhắn cho Process Bot..."
+                    placeholder="Hỏi Bot Vận Hành về quy trình..."
                     className="flex-1 bg-transparent border-none py-2 px-3 outline-none text-[16px] resize-none max-h-[200px] scrollbar-hide text-[#ececec]"
                   />
                   <button
@@ -288,8 +288,8 @@ function SidebarButton({ icon, label, active, onClick }: { icon: any, label: str
     <button
       onClick={onClick}
       className={`w-full flex items-center gap-3 p-3 rounded-lg text-sm font-medium transition-all ${active
-          ? "bg-[#212121] text-white"
-          : "text-slate-400 hover:bg-white/5 hover:text-white"
+        ? "bg-[#212121] text-white"
+        : "text-slate-400 hover:bg-white/5 hover:text-white"
         }`}
     >
       {icon}
