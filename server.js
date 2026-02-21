@@ -11,14 +11,23 @@ app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
 // CẤU HÌNH GOOGLE SHEET
-const SHEET_ID = '10Dxx2PN5udPtsI3YG3PnwgLWTnMOT1h746dxMwvKJqo'; // ID Sheet mới
+const SHEET_ID = '18DrFZsubUWHdaiVR3cGSOs6E5OkICb7Zmwde0fTucW8'; // ID Sheet mới
 const RANGE = 'Answer!A2:E'; // Đọc từ dòng 2 (bỏ header) cột A đến E
 
 // Khởi tạo Auth
-const auth = new google.auth.GoogleAuth({
-    keyFile: path.join(__dirname, 'service-account.json'),
-    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-});
+let auth;
+if (process.env.GOOGLE_CREDS) {
+    const credentials = JSON.parse(process.env.GOOGLE_CREDS);
+    auth = new google.auth.GoogleAuth({
+        credentials,
+        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+} else {
+    auth = new google.auth.GoogleAuth({
+        keyFile: path.join(__dirname, 'service-account.json'),
+        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+}
 
 const sheets = google.sheets({ version: 'v4', auth });
 

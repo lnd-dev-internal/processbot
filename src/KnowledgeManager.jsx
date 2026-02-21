@@ -48,15 +48,21 @@ function KnowledgeManager() {
         }
     }, [knowledge]);
 
-    const handleAdd = () => {
+    const handleAdd = async () => {
         if (!newEntry.q || !newEntry.a) return;
+        const tempId = 'user-' + Date.now();
         const newItem = {
             ...newEntry,
-            id: 'user-' + Date.now(),
+            id: tempId,
             ragStatus: 'pending'
         };
-        setKnowledge([newItem, ...knowledge]);
+
+        // Cập nhật state trước
+        setKnowledge(prev => [newItem, ...prev]);
         setNewEntry({ q: '', topic: '', a: '' });
+
+        // Tự động chạy RAG sau khi state đã cập nhật (dùng setTimeout để đảm bảo render)
+        setTimeout(() => runRAG(tempId), 500);
     };
 
     const handleSaveEdit = (id, updatedItem) => {

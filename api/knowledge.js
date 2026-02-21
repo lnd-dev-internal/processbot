@@ -1,7 +1,7 @@
 import { google } from 'googleapis';
 
 // CẤU HÌNH
-const SHEET_ID = '10Dxx2PN5udPtsI3YG3PnwgLWTnMOT1h746dxMwvKJqo'; // ID Sheet của bạn
+const SHEET_ID = '18DrFZsubUWHdaiVR3cGSOs6E5OkICb7Zmwde0fTucW8'; // ID Sheet của bạn
 const RANGE = 'Answer!A2:E';
 
 export default async function handler(req, res) {

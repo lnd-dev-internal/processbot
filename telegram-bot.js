@@ -7,7 +7,7 @@ dotenv.config();
 
 // ===== CẤU HÌNH =====
 const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const SHEET_ID = '10Dxx2PN5udPtsI3YG3PnwgLWTnMOT1h746dxMwvKJqo';
+const SHEET_ID = '18DrFZsubUWHdaiVR3cGSOs6E5OkICb7Zmwde0fTucW8';
 const RANGE = 'Answer!A2:E';
 
 // API Keys Gemini (xoay vòng)
@@ -112,7 +112,7 @@ async function askBot(query) {
 
         const genAI = getGenAI();
         const model = genAI.getGenerativeModel({
-            model: 'gemini-2.5-flash',
+            model: 'gemini-1.5-flash',
             systemInstruction: "Bạn là trợ lý hỗ trợ vận hành GHN. Trả lời câu hỏi một cách trực tiếp, ngắn gọn và đúng trọng tâm.\nLƯU Ý QUAN TRỌNG:\n- KHÔNG bao giờ nói 'Dựa trên context' hay 'Theo thông tin cung cấp'. Hãy trả lời như thể đó là kiến thức của bạn.\n- Nếu thông tin có trong quy trình, hãy hướng dẫn chi tiết từng bước.\n- Tuyệt đối không bịa đặt thông tin nếu không biết.\n- Trình bày RÕ RÀNG: Dùng gạch đầu dòng (-) hoặc số (1. 2. 3.) cho các bước. In đậm (**từ khóa**) các ý quan trọng."
         });
 
