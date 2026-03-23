@@ -16,7 +16,7 @@ function rotateKey() {
 }
 
 const EMB_MODEL = "gemini-embedding-001";
-const CHAT_MODEL = "gemini-1.5-flash";
+const CHAT_MODEL = "gemini-3.1-flash-lite";
 
 /**
  * Tính Cosine Similarity

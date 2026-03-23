@@ -24,7 +24,8 @@ export async function chatWithContext(
 ) {
     const ai = getAI(apiKey);
     const model = ai.getGenerativeModel({
-        model: "gemini-1.5-flash",
+        // Prefer newest low-cost Flash-Lite model; avoids deprecated 1.5 model IDs on v1beta.
+        model: "gemini-3.1-flash-lite",
         systemInstruction: `Bạn là **BOT VẬN HÀNH**, một chuyên gia hỗ trợ nội bộ thông minh và tận tâm của bộ phận Vận hành. Bạn không chỉ là một cỗ máy trả lời câu hỏi, mà là một người đồng nghiệp đáng tin cậy, thấu hiểu khó khăn của nhân viên bưu cục và luôn sẵn sàng hướng dẫn chi tiết.
 
 **NHẬN ĐỊNH VỀ BẢN THÂN:**
